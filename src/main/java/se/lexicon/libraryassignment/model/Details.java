@@ -1,17 +1,15 @@
 package se.lexicon.libraryassignment.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
 public class Details {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public int detailsId;
-
+    @Column(unique = true)
     public String email;
     public String name;
     public LocalDate birthDate;
@@ -24,7 +22,7 @@ public class Details {
     }
 
     public Details(){
-        
+
     }
 
     public int getDetailsId() {
